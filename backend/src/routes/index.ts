@@ -1,5 +1,6 @@
 import { Application } from 'express';
 import checklistRoutes from './checklist.route';
+import checklistItemRoutes from './checklist-item.route'
 
 const baseURL = '/api/v1';
 
@@ -13,6 +14,9 @@ const routes = (app: Application) => {
 
   // checklists routes
   app.use(`${baseURL}/checklists`, checklistRoutes);
+
+  // checklist-items
+  app.use(`${baseURL}/checklist-items`, checklistItemRoutes);
 };
 
 export default routes;
